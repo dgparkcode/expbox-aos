@@ -52,10 +52,6 @@ dependencies {
     // Hilt
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
-    testImplementation "com.google.dagger:hilt-android-testing:$hilt_version" // For Robolectric tests
-    kaptTest "com.google.dagger:hilt-android-compiler:$hilt_version" // .. With kotlin
-    androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version" // For instrumented tests
-    kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version" // .. With kotlin
 
     // For Room
     implementation "androidx.room:room-runtime:$room_version"
