@@ -17,6 +17,12 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = ["room.schemaLocation":"$projectDir/schemas".toString()]
+            }
+        }
     }
 
     buildTypes {
@@ -50,6 +56,11 @@ dependencies {
     kaptTest "com.google.dagger:hilt-android-compiler:$hilt_version" // .. With kotlin
     androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version" // For instrumented tests
     kaptAndroidTest "com.google.dagger:hilt-android-compiler:$hilt_version" // .. With kotlin
+
+    // For Room
+    implementation "androidx.room:room-runtime:$room_version"
+    kapt "androidx.room:room-compiler:$room_version"
+    implementation "androidx.room:room-ktx:$room_version" // Coroutines support for Room
 
     // Tests
     testImplementation 'junit:junit:4.13.2'
