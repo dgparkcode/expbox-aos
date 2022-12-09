@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.dgparkcode.expbox.app'
+    namespace 'com.dgparkcode.expbox'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.dgparkcode.expbox.app"
+        applicationId "com.dgparkcode.expbox"
         minSdk 21
         targetSdk 33
         versionCode 1

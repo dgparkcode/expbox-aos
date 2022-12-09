@@ -1,4 +1,4 @@
-package com.dgparkcode.expbox.app
+package com.dgparkcode.expbox
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
