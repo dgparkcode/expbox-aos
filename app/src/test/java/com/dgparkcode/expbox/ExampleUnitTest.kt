@@ -1,4 +1,4 @@
-package com.dgparkcode.expbox.app
+package com.dgparkcode.expbox
 
 import org.junit.Test
 
