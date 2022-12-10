@@ -76,6 +76,10 @@ dependencies {
     testImplementation "com.google.truth:truth:$truth_version"
     androidTestImplementation "com.google.truth:truth:$truth_version"
 
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
     // Tests
     testImplementation 'junit:junit:4.13.2'
     androidTestImplementation 'androidx.test.ext:junit:1.1.4'
