@@ -9,7 +9,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Expboxaos">
         <activity
-            android:name="com.dgparkcode.expbox.MainActivity"
+            android:name="com.dgparkcode.expbox.ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
