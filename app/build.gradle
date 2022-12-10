@@ -43,6 +43,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes true // For Hilt
+}
+
 dependencies {
     // Common
     implementation 'androidx.core:core-ktx:1.9.0'
