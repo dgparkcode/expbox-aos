@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2022. dgparkcode. All rights reserved.
+  -->
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/productsFragment"
+        android:icon="@drawable/ic_nav_list_24dp"
+        android:title="@string/nav_products_title"
+        app:showAsAction="always" />
+</menu>

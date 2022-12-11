@@ -20,7 +20,7 @@ android {
 
         javaCompileOptions {
             annotationProcessorOptions {
-                arguments = ["room.schemaLocation":"$projectDir/schemas".toString()]
+                arguments += ["room.schemaLocation":"$projectDir/schemas".toString()]
             }
         }
     }
@@ -41,6 +41,14 @@ android {
     kotlinOptions {
         jvmTarget = '1.8'
     }
+
+    buildFeatures {
+        dataBinding true
+    }
+}
+
+kapt {
+    correctErrorTypes true // For Hilt
 }
 
 dependencies {
@@ -71,6 +79,13 @@ dependencies {
     // Google Truth
     testImplementation "com.google.truth:truth:$truth_version"
     androidTestImplementation "com.google.truth:truth:$truth_version"
+
+    // Navigation
+    implementation "androidx.navigation:navigation-fragment-ktx:$nav_version"
+    implementation "androidx.navigation:navigation-ui-ktx:$nav_version"
+
+    // Coil
+    implementation "io.coil-kt:coil:$coil_version"
 
     // Tests
     testImplementation 'junit:junit:4.13.2'
