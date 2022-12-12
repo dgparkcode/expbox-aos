@@ -26,8 +26,7 @@ class ProductAdapter : ListAdapter<ProductItemState, ProductAdapter.ProductViewH
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        val productItem = getItem(position)
-        holder.bind(productItem)
+        holder.bind(getItem(position))
     }
 
     inner class ProductViewHolder(
@@ -37,7 +36,6 @@ class ProductAdapter : ListAdapter<ProductItemState, ProductAdapter.ProductViewH
         fun bind(productItem: ProductItemState) {
             binding.apply {
                 this.productItem = productItem
-                executePendingBindings()
             }
         }
     }
