@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright (c) 2022. dgparkcode. All rights reserved.
+  -->
+
+<resources>
+    <dimen name="size_product_item_image">56dp</dimen>
+    <dimen name="padding_product_item_start">16dp</dimen>
+    <dimen name="padding_product_item_end">24dp</dimen>
+    <dimen name="padding_product_item_top">8dp</dimen>
+    <dimen name="padding_product_item_bottom">8dp</dimen>
+    <dimen name="margin_product_item_title_start">16dp</dimen>
+</resources>

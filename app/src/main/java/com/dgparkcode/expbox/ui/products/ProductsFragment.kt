@@ -21,7 +21,7 @@ class ProductsFragment : BindingFragment<FragmentProductsBinding>(R.layout.fragm
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            viewmodel = productsViewModel
+            viewModel = productsViewModel
             lifecycleOwner = viewLifecycleOwner
         }
     }

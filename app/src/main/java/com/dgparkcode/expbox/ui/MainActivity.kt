@@ -22,14 +22,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
 
-        val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment_container) as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.fcv_main) as NavHostFragment
         val navCallback = NavController.OnDestinationChangedListener { _, destination, _ ->
-            binding.mainBottomNav.isVisible = MAIN_FRAGMENT_IDS.contains(destination.id)
+            binding.bnvMain.isVisible = MAIN_FRAGMENT_IDS.contains(destination.id)
         }
         val navController = navHostFragment.navController
         navController.addOnDestinationChangedListener(navCallback)
 
-        binding.mainBottomNav.setupWithNavController(navController)
+        binding.bnvMain.setupWithNavController(navController)
     }
 
     companion object {

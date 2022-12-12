@@ -12,7 +12,6 @@ import androidx.lifecycle.findViewTreeLifecycleOwner
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import coil.transform.CircleCropTransformation
 import com.dgparkcode.expbox.R
 import kotlinx.coroutines.launch
 
@@ -29,7 +28,7 @@ object ProductsBindingAdapter {
         view.load(image) {
             crossfade(enable = true)
             placeholder(R.mipmap.ic_launcher)
-            transformations(CircleCropTransformation())
+            error(R.mipmap.ic_launcher)
         }
     }
 
