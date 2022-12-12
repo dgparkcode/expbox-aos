@@ -8,26 +8,17 @@ import android.view.View
 import androidx.appcompat.widget.AppCompatImageView
 import androidx.core.view.isVisible
 import androidx.databinding.BindingAdapter
-import androidx.lifecycle.findViewTreeLifecycleOwner
-import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.dgparkcode.expbox.R
-import kotlinx.coroutines.launch
 
 object ProductsBindingAdapter {
 
     @JvmStatic
     @BindingAdapter("loadImage")
     fun bindLoadImage(view: AppCompatImageView, image: String?) {
-        if (image == null) {
-            view.setImageResource(R.mipmap.ic_launcher)
-            return
-        }
-
         view.load(image) {
             crossfade(enable = true)
-            placeholder(R.mipmap.ic_launcher)
             error(R.mipmap.ic_launcher)
         }
     }
@@ -41,9 +32,7 @@ object ProductsBindingAdapter {
     @JvmStatic
     @BindingAdapter("productItemStates")
     fun bindProductItemStates(view: RecyclerView, states: List<ProductItemState>?) {
-        view.findViewTreeLifecycleOwner()?.lifecycleScope?.launch {
-            val productAdapter = view.adapter as? ProductAdapter ?: ProductAdapter().also { view.adapter = it }
-            productAdapter.submitList(states)
-        }
+        val productAdapter = view.adapter as? ProductAdapter ?: ProductAdapter().also { view.adapter = it }
+        productAdapter.submitList(states)
     }
 }
