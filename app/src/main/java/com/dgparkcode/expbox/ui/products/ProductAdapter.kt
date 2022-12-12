@@ -26,16 +26,17 @@ class ProductAdapter : ListAdapter<ProductItemState, ProductAdapter.ProductViewH
     }
 
     override fun onBindViewHolder(holder: ProductViewHolder, position: Int) {
-        holder.bind(getItem(position))
+        val productItem = getItem(position)
+        holder.bind(productItem)
     }
 
     inner class ProductViewHolder(
         private val binding: ItemProductBinding,
     ) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(product: ProductItemState) {
+        fun bind(productItem: ProductItemState) {
             binding.apply {
-                productItemState = product
+                this.productItem = productItem
                 executePendingBindings()
             }
         }
@@ -48,10 +49,7 @@ class ProductAdapter : ListAdapter<ProductItemState, ProductAdapter.ProductViewH
         }
 
         override fun areContentsTheSame(oldItem: ProductItemState, newItem: ProductItemState): Boolean {
-            return oldItem.product == newItem.product &&
-                    oldItem.name == newItem.name &&
-                    oldItem.image == newItem.image &&
-                    oldItem.expireDate == newItem.expireDate
+            return oldItem.product == newItem.product
         }
     }
 }
