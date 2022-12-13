@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">app</string>
     <string name="nav_products_title">Products</string>
+    <string name="products_fragment_title">Products</string>
 </resources>
