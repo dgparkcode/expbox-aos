@@ -34,6 +34,6 @@ class MainActivity : AppCompatActivity() {
     }
 
     companion object {
-        private val MAIN_FRAGMENT_IDS = listOf(R.id.productsFragment)
+        private val MAIN_FRAGMENT_IDS = listOf<Int>()
     }
 }

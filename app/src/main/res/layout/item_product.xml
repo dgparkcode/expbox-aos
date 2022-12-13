@@ -16,15 +16,15 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/padding_product_item_start"
-        android:paddingTop="@dimen/padding_product_item_top"
-        android:paddingEnd="@dimen/padding_product_item_end"
-        android:paddingBottom="@dimen/padding_product_item_bottom">
+        android:paddingStart="@dimen/padding_productItem_start"
+        android:paddingTop="@dimen/padding_productItem_top"
+        android:paddingEnd="@dimen/padding_productItem_end"
+        android:paddingBottom="@dimen/padding_productItem_bottom">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_product_image"
-            android:layout_width="@dimen/size_product_item_image"
-            android:layout_height="@dimen/size_product_item_image"
+            android:layout_width="@dimen/size_productItem_image"
+            android:layout_height="@dimen/size_productItem_image"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -37,7 +37,7 @@
             style="@style/TextAppearance.Material3.TitleMedium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_product_item_title_start"
+            android:layout_marginStart="@dimen/margin_productItem_title_start"
             android:inputType="text"
             android:text="@{productItem.name}"
             app:layout_constraintBottom_toTopOf="@id/tv_product_expire_date"
@@ -52,7 +52,7 @@
             style="@style/TextAppearance.Material3.BodyMedium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_product_item_title_start"
+            android:layout_marginStart="@dimen/margin_productItem_title_start"
             android:inputType="text"
             android:text="@{productItem.expireDate}"
             app:layout_constraintBottom_toBottomOf="parent"

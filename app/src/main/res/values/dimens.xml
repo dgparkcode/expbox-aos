@@ -4,10 +4,11 @@
   -->
 
 <resources>
-    <dimen name="size_product_item_image">56dp</dimen>
-    <dimen name="padding_product_item_start">16dp</dimen>
-    <dimen name="padding_product_item_end">24dp</dimen>
-    <dimen name="padding_product_item_top">8dp</dimen>
-    <dimen name="padding_product_item_bottom">8dp</dimen>
-    <dimen name="margin_product_item_title_start">16dp</dimen>
+    <dimen name="size_productItem_image">56dp</dimen>
+    <dimen name="padding_productItem_start">16dp</dimen>
+    <dimen name="padding_productItem_end">24dp</dimen>
+    <dimen name="padding_productItem_top">8dp</dimen>
+    <dimen name="padding_productItem_bottom">8dp</dimen>
+    <dimen name="margin_productItem_title_start">16dp</dimen>
+    <dimen name="margin_all_fab">16dp</dimen>
 </resources>

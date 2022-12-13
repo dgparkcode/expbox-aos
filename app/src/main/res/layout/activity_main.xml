@@ -19,7 +19,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:navGraph="@navigation/main_graph" />
+            app:navGraph="@navigation/graph_main" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bnv_main"
@@ -31,6 +31,6 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/fcv_main"
-            app:menu="@menu/main_bnv" />
+            app:menu="@menu/bnv_main" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
