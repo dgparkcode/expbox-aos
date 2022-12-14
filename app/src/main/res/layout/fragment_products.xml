@@ -8,12 +8,20 @@
 
     <data>
 
+        <import type="com.dgparkcode.expbox.ui.products.ProductsAction.MoveToProductAdder" />
+
         <variable
             name="viewModel"
-            type="com.dgparkcode.expbox.ui.viewmodel.ProductsViewModel" />
+            type="com.dgparkcode.expbox.ui.products.ProductsViewModel" />
+
+        <variable
+            name="navigator"
+            type="com.dgparkcode.expbox.ui.products.ProductsNavigator" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout
+        navigateId="@{viewModel.productsUiState.destinationId}"
+        navigator="@{navigator}"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
@@ -26,7 +34,7 @@
                 android:id="@+id/tb_products"
                 android:layout_width="match_parent"
                 android:layout_height="?actionBarSize"
-                app:title="@string/products_fragment_title" />
+                app:title="@string/products_title" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView
@@ -36,8 +44,19 @@
             android:orientation="vertical"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            app:productItemStates="@{viewModel.productsState.productItems}"
+            productItems="@{viewModel.productsUiState.productItems}"
             tools:listitem="@layout/item_product" />
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/fab_products_add"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|end"
+            android:layout_marginEnd="@dimen/margin_fragments_fab"
+            android:layout_marginBottom="@dimen/margin_fragments_fab"
+            android:contentDescription="@string/products_add_button_description"
+            android:onClick="@{() -> viewModel.onAction(MoveToProductAdder.INSTANCE)}"
+            android:src="@drawable/fab_add_36" />
 
         <com.google.android.material.progressindicator.CircularProgressIndicator
             android:id="@+id/pb_products"
@@ -45,6 +64,6 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:indeterminate="true"
-            app:isVisible="@{viewModel.productsState.loading}" />
+            isVisible="@{viewModel.productsUiState.loading}" />
     </androidx.coordinatorlayout.widget.CoordinatorLayout>
 </layout>

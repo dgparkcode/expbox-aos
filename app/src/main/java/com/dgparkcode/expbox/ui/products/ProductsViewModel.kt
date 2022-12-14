@@ -2,14 +2,13 @@
  * Copyright (c) 2022. dgparkcode. All rights reserved.
  */
 
-package com.dgparkcode.expbox.ui.viewmodel
+package com.dgparkcode.expbox.ui.products
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.dgparkcode.expbox.R
 import com.dgparkcode.expbox.domain.model.Product
 import com.dgparkcode.expbox.domain.repository.ProductRepository
-import com.dgparkcode.expbox.ui.products.ProductItemState
-import com.dgparkcode.expbox.ui.products.ProductsState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -20,17 +19,46 @@ import java.time.LocalDate
 import javax.inject.Inject
 import kotlin.random.Random
 
+sealed class ProductsAction {
+    object MoveToProductAdder : ProductsAction()
+    object OnMovedToProductAdder : ProductsAction()
+}
+
+data class ProductsUiState(
+    val isLoading: Boolean = false,
+    val productItems: List<ProductItemUiState> = emptyList(),
+    val errorMessage: String? = null,
+    val destinationId: Int? = null,
+)
+
+data class ProductItemUiState(val product: Product) {
+    val productName get() = product.name
+    val productPhoto get() = product.image
+    val productExpireDate get() = product.expireAt.toString()
+}
+
 @HiltViewModel
 class ProductsViewModel @Inject constructor(
     private val productRepository: ProductRepository,
 ) : ViewModel() {
 
-    private val _productsState = MutableStateFlow(ProductsState())
-    val productsState get() = _productsState.asStateFlow()
+    private val _productsUiState = MutableStateFlow(ProductsUiState())
+    val productsUiState get() = _productsUiState.asStateFlow()
 
     init {
+        getAllProductItems()
+    }
+
+    fun onAction(action: ProductsAction) {
+        when (action) {
+            is ProductsAction.MoveToProductAdder -> updateDestinationIdState(PRODUCT_ADDER_DEST_ID)
+            is ProductsAction.OnMovedToProductAdder -> updateDestinationIdState(null)
+        }
+    }
+
+    private fun getAllProductItems() {
         viewModelScope.launch {
-            _productsState.update { it.copy(isLoading = true) }
+            _productsUiState.update { it.copy(isLoading = true) }
 
             delay(3000L)
 
@@ -49,9 +77,20 @@ class ProductsViewModel @Inject constructor(
                     image = imageUrls[Random.nextInt(imageUrls.size)],
                     expireAt = LocalDate.now()
                 )
-                ProductItemState(product)
+                ProductItemUiState(product)
             }
-            _productsState.update { it.copy(isLoading = false, productItems = fakeItems) }
+
+            _productsUiState.update { it.copy(isLoading = false, productItems = fakeItems) }
         }
+    }
+
+    private fun updateDestinationIdState(destinationId: Int?) {
+        viewModelScope.launch {
+            _productsUiState.update { it.copy(destinationId = destinationId) }
+        }
+    }
+
+    companion object {
+        private const val PRODUCT_ADDER_DEST_ID = R.id.action_productsFragment_to_productAdderFragment
     }
 }
