@@ -7,7 +7,7 @@ package com.dgparkcode.expbox.ui.products
 import androidx.navigation.NavController
 import com.dgparkcode.expbox.ui.common.Navigator
 
-data class ProductsNavigator(
+class ProductsNavigator(
     private val viewModel: ProductsViewModel,
     private val navController: NavController,
 ) : Navigator {
