@@ -1,6 +1,7 @@
 <resources>
     <string name="app_name">만료일 알림상자</string>
-    <string name="nav_productsTitle">상품</string>
+    <string name="main_products_nav_title">상품</string>
     <string name="products_title">상품</string>
-    <string name="products_addDesc">추가하기</string>
+    <string name="products_add_button_description">추가하기</string>
+    <string name="productadder_title">상품 추가하기</string>
 </resources>

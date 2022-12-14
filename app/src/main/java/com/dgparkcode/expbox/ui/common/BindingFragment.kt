@@ -2,7 +2,7 @@
  * Copyright (c) 2022. dgparkcode. All rights reserved.
  */
 
-package com.dgparkcode.expbox.ui
+package com.dgparkcode.expbox.ui.common
 
 import android.os.Bundle
 import android.view.LayoutInflater

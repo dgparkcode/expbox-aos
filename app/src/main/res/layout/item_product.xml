@@ -10,26 +10,26 @@
 
         <variable
             name="productItem"
-            type="com.dgparkcode.expbox.ui.products.ProductItemState" />
+            type="com.dgparkcode.expbox.ui.products.ProductItemUiState" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingStart="@dimen/padding_productItem_start"
-        android:paddingTop="@dimen/padding_productItem_top"
-        android:paddingEnd="@dimen/padding_productItem_end"
-        android:paddingBottom="@dimen/padding_productItem_bottom">
+        android:paddingStart="@dimen/padding_productitem_start"
+        android:paddingTop="@dimen/padding_productitem_top"
+        android:paddingEnd="@dimen/padding_productitem_end"
+        android:paddingBottom="@dimen/padding_productitem_bottom">
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_product_image"
-            android:layout_width="@dimen/size_productItem_image"
-            android:layout_height="@dimen/size_productItem_image"
+            android:layout_width="@dimen/size_productitem_image"
+            android:layout_height="@dimen/size_productitem_image"
             android:scaleType="centerCrop"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:loadImage="@{productItem.image}"
+            loadImage="@{productItem.productPhoto}"
             tools:src="@mipmap/ic_launcher" />
 
         <com.google.android.material.textview.MaterialTextView
@@ -37,9 +37,9 @@
             style="@style/TextAppearance.Material3.TitleMedium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_productItem_title_start"
+            android:layout_marginStart="@dimen/margin_productitem_title_start"
             android:inputType="text"
-            android:text="@{productItem.name}"
+            android:text="@{productItem.productName}"
             app:layout_constraintBottom_toTopOf="@id/tv_product_expire_date"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_product_image"
@@ -52,9 +52,9 @@
             style="@style/TextAppearance.Material3.BodyMedium"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/margin_productItem_title_start"
+            android:layout_marginStart="@dimen/margin_productitem_title_start"
             android:inputType="text"
-            android:text="@{productItem.expireDate}"
+            android:text="@{productItem.productExpireDate}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@id/iv_product_image"

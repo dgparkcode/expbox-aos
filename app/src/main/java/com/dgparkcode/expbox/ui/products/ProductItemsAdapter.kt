@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.dgparkcode.expbox.R
 import com.dgparkcode.expbox.databinding.ItemProductBinding
 
-class ProductAdapter : ListAdapter<ProductItemState, ProductAdapter.ProductViewHolder>(ProductComparator) {
+class ProductItemsAdapter : ListAdapter<ProductItemUiState, ProductItemsAdapter.ProductViewHolder>(ProductComparator) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductViewHolder {
         val binding = DataBindingUtil.inflate<ItemProductBinding>(
@@ -29,24 +29,20 @@ class ProductAdapter : ListAdapter<ProductItemState, ProductAdapter.ProductViewH
         holder.bind(getItem(position))
     }
 
-    inner class ProductViewHolder(
-        private val binding: ItemProductBinding,
-    ) : RecyclerView.ViewHolder(binding.root) {
+    inner class ProductViewHolder(private val binding: ItemProductBinding) : RecyclerView.ViewHolder(binding.root) {
 
-        fun bind(productItem: ProductItemState) {
-            binding.apply {
-                this.productItem = productItem
-            }
+        fun bind(productItem: ProductItemUiState) {
+            binding.apply { this.productItem = productItem }
         }
     }
 
-    object ProductComparator : DiffUtil.ItemCallback<ProductItemState>() {
+    object ProductComparator : DiffUtil.ItemCallback<ProductItemUiState>() {
 
-        override fun areItemsTheSame(oldItem: ProductItemState, newItem: ProductItemState): Boolean {
+        override fun areItemsTheSame(oldItem: ProductItemUiState, newItem: ProductItemUiState): Boolean {
             return oldItem.product.id == newItem.product.id
         }
 
-        override fun areContentsTheSame(oldItem: ProductItemState, newItem: ProductItemState): Boolean {
+        override fun areContentsTheSame(oldItem: ProductItemUiState, newItem: ProductItemUiState): Boolean {
             return oldItem.product == newItem.product
         }
     }

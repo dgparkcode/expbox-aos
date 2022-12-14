@@ -7,7 +7,7 @@
 
     <item
         android:id="@+id/productsFragment"
-        android:icon="@drawable/nav_list_24dp"
-        android:title="@string/nav_productsTitle"
+        android:icon="@drawable/nav_list_24"
+        android:title="@string/main_products_nav_title"
         app:showAsAction="always" />
 </menu>

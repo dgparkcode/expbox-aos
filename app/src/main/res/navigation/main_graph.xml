@@ -12,5 +12,14 @@
         android:id="@+id/productsFragment"
         android:name="com.dgparkcode.expbox.ui.products.ProductsFragment"
         android:label="ProductsFragment"
-        tools:layout="@layout/fragment_products" />
+        tools:layout="@layout/fragment_products">
+        <action
+            android:id="@+id/action_productsFragment_to_productAdderFragment"
+            app:destination="@id/productAdderFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productAdderFragment"
+        android:name="com.dgparkcode.expbox.ui.productadder.ProductAdderFragment"
+        android:label="ProductAdderFragment"
+        tools:layout="@layout/fragment_product_adder" />
 </navigation>
