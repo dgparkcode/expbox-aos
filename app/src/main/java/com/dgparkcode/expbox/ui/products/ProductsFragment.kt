@@ -10,7 +10,6 @@ import androidx.fragment.app.viewModels
 import com.dgparkcode.expbox.R
 import com.dgparkcode.expbox.databinding.FragmentProductsBinding
 import com.dgparkcode.expbox.ui.BindingFragment
-import com.dgparkcode.expbox.ui.viewmodel.ProductsViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

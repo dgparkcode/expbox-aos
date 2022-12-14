@@ -10,7 +10,7 @@
 
         <variable
             name="viewModel"
-            type="com.dgparkcode.expbox.ui.viewmodel.ProductsViewModel" />
+            type="com.dgparkcode.expbox.ui.products.ProductsViewModel" />
     </data>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

@@ -2,14 +2,12 @@
  * Copyright (c) 2022. dgparkcode. All rights reserved.
  */
 
-package com.dgparkcode.expbox.ui.viewmodel
+package com.dgparkcode.expbox.ui.products
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dgparkcode.expbox.domain.model.Product
 import com.dgparkcode.expbox.domain.repository.ProductRepository
-import com.dgparkcode.expbox.ui.products.ProductItemState
-import com.dgparkcode.expbox.ui.products.ProductsState
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.MutableStateFlow
